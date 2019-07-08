@@ -1,0 +1,185 @@
+[
+{
+"title": "antelope",
+"letter" :"A",
+"imagepath": "/img/antelope.png",
+"sound": "/snd/antelope.mp3"
+},
+
+{
+"title": "bat",
+"letter" :"B",
+"imagepath": "/img/bat.png",
+"sound": "/snd/bat.mp3"
+},
+
+{
+"title": "cat",
+"letter" :"C",
+"imagepath": "/img/cat.png",
+"sound": "/snd/cat.mp3"
+},
+
+{
+"title": "duck",
+"letter" :"D",
+"imagepath": "/img/duck.png",
+"sound": "/snd/duck.mp3"
+},
+
+{
+"title": "elephant",
+"letter" :"E",
+"imagepath": "/img/elephant.png",
+"sound": "/snd/elephant.mp3"
+},
+
+{
+"title": "frog",
+"letter" :"F",
+"imagepath": "/img/frog.png",
+"sound": "/snd/frog.mp3"
+},
+
+{
+"title": "giraffe",
+"letter" :"G",
+"imagepath": "/img/giraffe.png",
+"sound": "/snd/giraffe.mp3"
+},
+
+{
+"title": "horse",
+"letter" :"H",
+"imagepath": "/img/horse.png",
+"sound": "/snd/horse.mp3"
+},
+
+{
+"title": "ibis",
+"letter" :"I",
+"imagepath": "/img/ibis.jpg",
+"sound": "/snd/ibis.mp3"
+},
+
+{
+"title": "jackal",
+"letter" :"J",
+"imagepath": "/img/jackal.jpg",
+"sound": "/snd/jackal.wav"
+},
+
+{
+"title": "komodo-dragon",
+"letter" :"K",
+"imagepath": "/img/komodo-dragon.png",
+"sound": "/snd/komodo-dragon.mp3"
+},
+
+{
+"title": "lion",
+"letter" :"L",
+"imagepath": "/img/lion.png",
+"sound": "/snd/lion.mp3"
+},
+
+{
+"title": "moose",
+"letter" :"M",
+"imagepath": "/img/moose.png",
+"sound": "/snd/moose.mp3"
+},
+
+{
+"title": "nighthawk",
+"letter" :"N",
+"imagepath": "/img/nighthawk.jpg",
+"sound": "/snd/Nighthawk.mp3"
+},
+
+{
+"title": "nighthawk",
+"letter" :"N",
+"imagepath": "/img/nighthawk.png",
+"sound": "/snd/Nighthawk.mp3"
+},
+
+{
+"title": "owl",
+"letter" :"O",
+"imagepath": "/img/owl.png",
+"sound": "/snd/owl.mp3"
+},
+
+{
+"title": "pig",
+"letter" :"P",
+"imagepath": "/img/pig.png",
+"sound": "/snd/pig.mp3"
+},
+
+{
+"title": "quail",
+"letter" :"Q",
+"imagepath": "/img/quail.jpg",
+"sound": "/snd/quail.wav"
+},
+
+{
+"title": "raccoon",
+"letter" :"R",
+"imagepath": "/img/raccoon.png",
+"sound": "/snd/raccoon.mp3"
+},
+
+{
+"title": "sheep",
+"letter" :"S",
+"imagepath": "/img/sheep.png",
+"sound": "/snd/sheep.mp3"
+},
+
+{
+"title": "turkey",
+"letter" :"T",
+"imagepath": "/img/turkey.png",
+"sound": "/snd/turkey.mp3"
+},
+
+{
+"title": "viper",
+"letter" :"V",
+"imagepath": "/img/viper.jpg",
+"sound": "/snd/duck.mp3"
+},
+
+{
+"title": "wolf",
+"letter" :"W",
+"imagepath": "/img/wolf.png",
+"sound": "/snd/wolf.mp3"
+},
+
+{
+"title": "xeme",
+"letter" :"X",
+"imagepath": "/img/xeme.png",
+"sound": "/snd/duck.mp3"
+},
+
+{
+"title": "yak",
+"letter" :"Y",
+"imagepath": "/img/yak.png",
+"sound": "/snd/yak.mp3"
+},
+
+{
+"title": "zebra",
+"letter" :"Z",
+"imagepath": "/img/zebra.png",
+"sound": "/snd/zebra.mp3"
+}
+
+
+]

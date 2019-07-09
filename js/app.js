@@ -5,7 +5,7 @@ var output = "";
 
 function importAnimals(){
    var request = new XMLHttpRequest();  
-   request.open('GET', '/data/animals.json', true);
+   request.open('GET', './data/animals.json', true);
      request.onload = function() {
        if (request.status >= 200 && request.status < 400) {
          // Success!

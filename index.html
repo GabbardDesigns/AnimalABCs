@@ -4,18 +4,29 @@
   <meta charset="UTF-8">
   <title>Animal ABC's</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/jquery-3.4.1.js"></script>
 </head>
 <body>
 
+  <div id="overlay"></div>
+  <div id="modal">
+    <div id="modal_X" onclick="closeModal()">&times;</div>
+    
+    <div class="modal_message" id="animal_card" >
+        
+    </div>
 
+  </div>
+  
     <div class="main-container">
   
-        <div class="inv_column" id="first_container" >
-          <div id="inventory_title" class="section_title">Animal ABC's</div>
-          <div id="inventory" class="inventory_list_section"></div>
+        <div class="ltr_holder" id="first_container" >
+          <div id="ltr_holder_title" onclick="focus(this)" class="section_title">Animal ABC's</div>
+          <div id="animals" class="animal_list_section"></div>
         </div>
   
         <footer class="main-footer">
+            <button onclick="focus(this)" id="hammy">Click me</button>
           <div class="footer-inner">
             <span>&copy; 2019 GabbardDesigns</span>
           </div>
@@ -25,3 +36,4 @@
 <script src="./js/app.js"></script>
 </body>
 </html>
+

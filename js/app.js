@@ -1,5 +1,5 @@
 
-var inventorySection = "";
+var amimalsSection = "";
 var animals_Array = [];
 var output = "";
 
@@ -19,8 +19,8 @@ function importAnimals(){
      val.sound
    ]);
    output +=
-     '<div class="product" id="product-' +
-     animals_Array[key][0] +`">` + 
+     '<div class="letter" onclick="focus(this);" id="letter-' +
+     animals_Array[key][1] +`">` + 
      
      '<p class="title noselect">' +
      val.title +
@@ -30,7 +30,7 @@ function importAnimals(){
      val.imagepath +
      '" alt="'+ val.alt +'">' +
      "</div>" +
-     '<p class="price noselect">' +
+     '<p class="text noselect">' +
      val.letter +
      "</p>" 
      +` <audio id="`+ val.title+
@@ -39,29 +39,65 @@ function importAnimals(){
      + "</audio>" +
      "</div>";
  });
- inventorySection = output;
- document.getElementById("inventory").innerHTML=output;
+ animalsSection = output;
+ document.getElementById("animals").innerHTML=output;
 }};
 request.send();
 }
 
-
-
 importAnimals();
 
+function focus(e) {
+  var id = e.id;
+  console.log(id);
+}
 
-function removeTransition(e) {
-  if (e.propertyName !== 'transform') return;
-  e.target.classList.remove('playing');
-}
-function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-  if (!audio) return;
-  key.classList.add('playing');
-  audio.currentTime = 0;
-  audio.play();
-}
-const keys = Array.from(document.querySelectorAll('.key'));
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-window.addEventListener('keydown', playSound);
+// $(function () {
+//   $('.letter').click(function () {
+//       $(this).toggleClass('playing');
+
+//   });
+
+//   centered = function () {
+//       var wy = window.innerHeight / 2,
+//           wx = window.innerWidth / 2,
+//           py = 300,
+//           px = 300,
+//           pageTop = .9 * wy,
+//           pageLeft = .9 * wx;
+//       if ($('.letter').hasClass('playing')) {
+//         showAnimalCard();
+// } else {
+//           $('.letter').removeClass('playing');
+//       }
+//   };
+
+//   $('.letter').click(centered);
+//   $(window).resize(centered);
+// });
+
+
+// function removeTransition(e) {
+//   if (e.propertyName !== 'transform') return;
+//   e.target.classList.remove('playing');
+// }
+
+// function playSound(e) {
+//   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+//   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+//   if (!audio) return;
+//   key.classList.add('playing');
+//   audio.currentTime = 0;
+//   audio.play();
+// }
+
+// const letters = Array.from(document.querySelectorAll('.letter'));
+// letters.forEach(letter => letter.addEventListener('transitionend', removeTransition));
+
+// function showAnimalCard(){
+//  $('.playing').css({
+//               position: "absolute",
+//               top: pageTop,
+//               left: pageLeft
+//           });
+// }

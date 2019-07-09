@@ -1,0 +1,109 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Varela Round", sans-serif;
+  color: #3a3a3a;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header{
+    max-height:5vh;
+    min-height:5vh;
+    background-color: aqua;
+}
+
+.top_bar{
+    max-height:5vh;
+    min-height:5vh;
+    background-color: slategrey;
+    color:#fff;
+}
+
+.banner{
+    max-height:20vh;
+    min-height:20vh;
+    background-color: #00598C;
+    width:100%;
+    margin: 0 auto;
+    flex: 0 1 100vw;
+    background-image: url("../img/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
+}
+
+.main-footer {
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1.5;
+  max-height: 5vh;
+  min-height: 5vh;
+  width: 100%;
+  background-color: slategrey;
+}
+
+.conversation_holder{
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    justify-content: flex-start;
+}
+
+.footer-inner {
+  padding-top: 1vh;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100vw;
+  height: 90vh;
+}
+
+.interviewed{
+    background-color:#fff;
+    color:#000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.interviewer{
+    background-color:#000;
+    color:#fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.interviewed p, .interviewer p{
+    padding:10px 20px;
+} 
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: rgba(245, 247, 251, 1);
+}
+
+.conversation_holder {
+  max-height: 70vh;
+  min-height: 70vh;
+  width:60%;
+  margin: 0 auto;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (orientation: landscape) {
+    .conversation_holder {
+        width:60%;
+      }
+}

@@ -1,7 +1,10 @@
-
+var audioFilesSection = "";
 var amimalsSection = "";
 var animals_Array = [];
 var output = "";
+var audioOutput= "";
+var letters = [];
+var modalContent = "";
 
 function importAnimals(){
    var request = new XMLHttpRequest();  
@@ -12,18 +15,18 @@ function importAnimals(){
          var data = JSON.parse(request.responseText);
          //  console.log(data);
          data.forEach(function(val, key){
-   animals_Array.push([
+     animals_Array.push([
      val.title,
      val.letter,
      val.imagepath,
      val.sound
    ]);
    output +=
-     '<div class="letter" onclick="focus(this);" id="letter-' +
-     animals_Array[key][1] +`">` + 
+     '<div class="letter key" href="#overlay" data-key="' +
+    (key) +`">` + 
      
      '<p class="title noselect">' +
-     val.title +
+     val.letter +
      "</p>" +
      '<div class="image_line noselect">' +
      '<img src="' +
@@ -31,73 +34,70 @@ function importAnimals(){
      '" alt="'+ val.alt +'">' +
      "</div>" +
      '<p class="text noselect">' +
-     val.letter +
-     "</p>" 
-     +` <audio id="`+ val.title+
+     val.title +
+     "</p>" +
+     ` <audio data-key="`+ val.title+
      `"> <source src="`+ val.sound +
      `" type="audio/mpeg">`
      + "</audio>" +
-     "</div>";
+      "</div>";
  });
+ 
  animalsSection = output;
+ audioFilesSection = audioOutput;
+
  document.getElementById("animals").innerHTML=output;
+ document.getElementById("audiofiles").innerHTML=audioOutput;
+ 
 }};
 request.send();
 }
 
 importAnimals();
 
-function focus(e) {
-  var id = e.id;
-  console.log(id);
+
+function removeTransition(e) {
+  if (e.propertyName !== 'transform') return;
+  e.target.classList.remove('playing');
 }
 
-// $(function () {
-//   $('.letter').click(function () {
-//       $(this).toggleClass('playing');
+function playSound(e) {
+  const audio = document.querySelector(`audio[data-key="e"]`);
+  const letter = document.querySelector(`div[data-key="e"]`);
+  if (!audio) return;
+  letter.classList.add('playing');
+  audio.currentTime = 0;
+  audio.play();
+}
 
-//   });
-
-//   centered = function () {
-//       var wy = window.innerHeight / 2,
-//           wx = window.innerWidth / 2,
-//           py = 300,
-//           px = 300,
-//           pageTop = .9 * wy,
-//           pageLeft = .9 * wx;
-//       if ($('.letter').hasClass('playing')) {
-//         showAnimalCard();
-// } else {
-//           $('.letter').removeClass('playing');
-//       }
-//   };
-
-//   $('.letter').click(centered);
-//   $(window).resize(centered);
-// });
+keys =  Array.from(document.querySelectorAll('.key'));
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+window.addEventListener("click", playSound);
 
 
-// function removeTransition(e) {
-//   if (e.propertyName !== 'transform') return;
-//   e.target.classList.remove('playing');
-// }
+$('.animal_list_section').on('click', 'div', function(){
+// gets position in the array of the box, used to access position of audio file.
+  var key = $(this).data("key");
 
-// function playSound(e) {
-//   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-//   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-//   if (!audio) return;
-//   key.classList.add('playing');
-//   audio.currentTime = 0;
-//   audio.play();
-// }
+  //sets the modal content to that of the box clicked
+   document.getElementById('animal_card').innerHTML = this.innerHTML;
 
-// const letters = Array.from(document.querySelectorAll('.letter'));
-// letters.forEach(letter => letter.addEventListener('transitionend', removeTransition));
+// shows modal   
+   $('#modal').show();
+   $('#overlay').show();
 
-// function showAnimalCard(){
-//  $('.playing').css({
-//               position: "absolute",
-//               top: pageTop,
-//               left: pageLeft
-//           });
-// }
+
+// plays the audio file associated with key array value   
+setTimeout(function () {
+  $('.letter audio')[key].play();
+}, 1000);
+  
+
+// when audio is finished, hide the modal   
+  $('.letter audio').on('ended', function(){
+    $('#modal').hide();
+    $('#overlay').hide();
+     $(this).parent().removeClass("playing");
+});
+//
+} );
